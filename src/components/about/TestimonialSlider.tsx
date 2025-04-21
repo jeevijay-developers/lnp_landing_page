@@ -15,7 +15,8 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     name: "Aarav Sharma",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    image:
+      "https://t3.ftcdn.net/jpg/10/66/68/96/360_F_1066689635_FMCMRi9EVzawgC9ZItv8Lba0HYeTi9GV.jpg",
     message:
       "Excellent faculty and a good learning environment. Up-to-date resources. More online resources for remote studying would be great.",
     rating: 5,
@@ -31,7 +32,8 @@ const testimonials: Testimonial[] = [
   },
   {
     name: "Rohit Mehta",
-    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    image:
+      "https://t3.ftcdn.net/jpg/10/66/68/96/360_F_1066689635_FMCMRi9EVzawgC9ZItv8Lba0HYeTi9GV.jpg",
     message:
       "Learn N Prep is a fantastic place to prepare for exams. The detailed study guides and regular assessments kept me on track. The teachers are genuinely invested in student success, and the overall atmosphere is very motivating.",
     rating: 5,
@@ -39,7 +41,8 @@ const testimonials: Testimonial[] = [
   },
   {
     name: "Aarav Sharma",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    image:
+      "https://t3.ftcdn.net/jpg/10/66/68/96/360_F_1066689635_FMCMRi9EVzawgC9ZItv8Lba0HYeTi9GV.jpg",
     message:
       "Excellent faculty and a good learning environment. Up-to-date resources. More online resources for remote studying would be great.",
     rating: 5,
@@ -55,7 +58,8 @@ const testimonials: Testimonial[] = [
   },
   {
     name: "Rohit Mehta",
-    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    image:
+      "https://t3.ftcdn.net/jpg/10/66/68/96/360_F_1066689635_FMCMRi9EVzawgC9ZItv8Lba0HYeTi9GV.jpg",
     message:
       "Learn N Prep is a fantastic place to prepare for exams. The detailed study guides and regular assessments kept me on track. The teachers are genuinely invested in student success, and the overall atmosphere is very motivating.",
     rating: 5,
