@@ -10,6 +10,7 @@ const CourseCategory = () => {
         backgroundImage: `URL("/svg/Simple Shiny.svg")`,
       }}
       className="lg:mx-10 mx-2 dark:text-gray-700"
+      data-aos="fade-up"
     >
       <div className="flex flex-col justify-center items-center flex-wrap gap-7 p-5">
         <div className="text-myGreen flex flex-row gap-4 py-5 text-center items-center justify-center text-lg">
@@ -26,6 +27,8 @@ const CourseCategory = () => {
               <li
                 key={index}
                 className="flex flex-col items-center border border-myGreen m-4 p-4 rounded-xl bg-white min-w-[200px]"
+                data-aos="fade-up"
+                data-aos-delay={`${50 + index * 100}`}
               >
                 <Image
                   src={"/icons/books.png"}

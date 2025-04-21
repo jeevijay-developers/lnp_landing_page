@@ -15,6 +15,7 @@ const CourseSlider = () => {
     <div
       id="courses"
       className="overflow-hidden  px-4 py-8 bg-gray-50 dark:bg-zinc-950 lg:mx-10 mx-2 "
+      data-aos="fade-up"
     >
       <h2 className="text-3xl font-bold text-center text-indigo-600 mb-6">
         Explore Our Courses
@@ -27,9 +28,11 @@ const CourseSlider = () => {
               key={index}
               id={`${course.title} ${course.class}`}
               className="embla__slide min-w-[300px] flex-shrink-0 bg-white dark:bg-zinc-900 rounded-2xl shadow-xl p-4"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              // initial={{ opacity: 0, y: 40 }}
+              // animate={{ opacity: 1, y: 0 }}
+              // transition={{ delay: index * 0.1 }}
+              // data-aos="fade-up"
+              // data-aos-delay={`${50 + index * 100}`}
             >
               <img
                 src={course.image}

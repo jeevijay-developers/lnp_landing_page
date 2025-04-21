@@ -16,32 +16,56 @@ const Teachers = () => {
       </div>
       <div>
         <ul className="flex  flex-row lg:justify-start justify-center lg:items-center flex-wrap lg:gap-7 gap-3">
-          <li className="flex flex-col  justify-center items-center max-w-[230px] bg-white p-2 rounded-xl border border-myGreen">
+          <li
+            className="flex flex-col  justify-center items-center max-w-[230px] bg-white p-2 rounded-xl border border-myGreen"
+            data-aos="fade-up"
+            data-aos-delay={`50`}
+          >
             <img src="/imgs/t1.png" className="h-[200px] w-[200px]" alt="" />
             <b>Dharmendra Ojha Sir (+8 Year Experience)</b>
             <p>Chemistry</p>
           </li>
-          <li className="flex flex-col justify-center items-center max-w-[230px] bg-white p-2 rounded-xl border border-myGreen">
+          <li
+            className="flex flex-col justify-center items-center max-w-[230px] bg-white p-2 rounded-xl border border-myGreen"
+            data-aos="fade-up"
+            data-aos-delay={`100`}
+          >
             <img src="/imgs/t2.png" className="h-[200px] w-[200px]" alt="" />
             <b>DHimanshu Soni Sir (+10 Year Experience)</b>
             <p>Physics</p>
           </li>
-          <li className="flex flex-col justify-center items-center max-w-[230px] bg-white p-2 rounded-xl border border-myGreen">
+          <li
+            className="flex flex-col justify-center items-center max-w-[230px] bg-white p-2 rounded-xl border border-myGreen"
+            data-aos="fade-up"
+            data-aos-delay={`150`}
+          >
             <img src="/imgs/t3.png" className="h-[200px] w-[200px]" alt="" />
             <b>Ragini Tripathi Ma'am</b>
             <p>Zoology</p>
           </li>
-          <li className="flex flex-col justify-center items-center max-w-[230px]  bg-white p-2 rounded-xl border border-myGreen">
+          <li
+            className="flex flex-col justify-center items-center max-w-[230px]  bg-white p-2 rounded-xl border border-myGreen"
+            data-aos="fade-up"
+            data-aos-delay={`200`}
+          >
             <img src="/imgs/t4.png" className="h-[200px] w-[200px]" alt="" />
             <b>Amit Dehra Sir</b>
             <p>mathematics</p>
           </li>
-          <li className="flex flex-col justify-center items-center max-w-[230px] bg-white p-2 rounded-xl border border-myGreen">
+          <li
+            className="flex flex-col justify-center items-center max-w-[230px] bg-white p-2 rounded-xl border border-myGreen"
+            data-aos="fade-up"
+            data-aos-delay={`250`}
+          >
             <img src="/imgs/t2.png" className="h-[200px] w-[200px]" alt="" />
             <b>Himanshu Soni Sir (+10 Year Experience)</b>
             <p>Physics</p>
           </li>
-          <li className="flex flex-col justify-center items-center max-w-[230px] bg-white p-2 rounded-xl border border-myGreen">
+          <li
+            className="flex flex-col justify-center items-center max-w-[230px] bg-white p-2 rounded-xl border border-myGreen"
+            data-aos="fade-up"
+            data-aos-delay={`300`}
+          >
             <img src="/imgs/t6.png" className="h-[200px] w-[200px]" alt="" />
             <b>Ajay Singh Bhadoriya Sir</b>
             <p>Mathematics</p>

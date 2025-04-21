@@ -4,7 +4,10 @@ import MyButtonTwo from "../buttons/MyButtonTwo";
 
 const Topper = () => {
   return (
-    <div className="lg:mx-10 mx-0 my-15 flex flex-col lg:flex-row justify-center items-center gap-6 pb-4 rounded-xl bg-blue-50">
+    <div
+      className="lg:mx-10 mx-0 my-15 flex flex-col lg:flex-row justify-center items-center gap-6 pb-4 rounded-xl bg-blue-50"
+      data-aos="fade-up"
+    >
       <div
         className="backdrop-blur-sm px-3 pt-4 rounded-lg  lg:w-[50%] justify-center flex lg:flex-row flex-col gap-4 text-center color-white w-full items-center lg:block"
         style={{ backgroundImage: `URL(${"/imgs/brush1.png"})` }}

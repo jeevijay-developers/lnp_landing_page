@@ -164,7 +164,7 @@ const ModernForm = () => {
             </Button>
           </Box>
           <div className="text-green-500 text-[10px]">
-            get uptp 500 off with LNP10 coupon 🎉✨✨
+            get upto 500 off with LNP10 coupon 🎉✨✨
           </div>
           {appliedCoupon && (
             <Alert severity="success">

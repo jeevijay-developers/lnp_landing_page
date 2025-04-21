@@ -5,7 +5,7 @@ import { BiBulb } from "react-icons/bi";
 const HomeAbout1 = () => {
   return (
     <div className="flex lg:flex-row justify-center pb-4 items-center gap-6 bg-blue-50 flex-col lg:mx-10 mx-2 dark:text-gray-800  text-gray-600">
-      <div className="w-full lg:w-[50%] p-9 rounded-lg   ">
+      <div className="w-full lg:w-[50%] p-9 rounded-lg   " data-aos="fade-left">
         <img
           src={"/imgs/cs.jpg"}
           className="w-[90%] h-[90%] object-cover shadow-lg rounded-2xl"
@@ -14,7 +14,7 @@ const HomeAbout1 = () => {
           height={100}
         />
       </div>
-      <div className="lg:w-[50%] lg:px-15 px-5">
+      <div className="lg:w-[50%] lg:px-15 px-5" data-aos="fade-right">
         <div className="text-myGreen flex flex-row gap-4 py-5 text-center items-center justify-center text-lg">
           <BiBulb className="text-2xl" />{" "}
           <span>Gateway to Lifelong Learning</span>

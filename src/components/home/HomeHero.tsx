@@ -26,7 +26,10 @@ const HomeHero = () => {
         />
       </div> */}
       <div className="max-full relative  my-15 min-h-fit flex flex-col justify-start lg:justify-center items-center lg:flex-row  mx-auto">
-        <div className="relative lg:flex hidden h-[auto] lg:min-h-[auto] min-h-[500px] lg:w-[50%] w-full">
+        <div
+          className="relative lg:flex hidden h-[auto] lg:min-h-[auto] min-h-[500px] lg:w-[50%] w-full"
+          data-aos="fade-right"
+        >
           <Image
             src={study}
             alt="image"
@@ -90,7 +93,10 @@ const HomeHero = () => {
           </div> */}
         </div>
 
-        <div className="flex flex-col lg:w-[50%] mb-5 w-full h-full   justify-center items-center">
+        <div
+          className="flex flex-col lg:w-[50%] mb-5 w-full h-full   justify-center items-center"
+          data-aos="fade-left"
+        >
           <ModernForm />
         </div>
       </div>

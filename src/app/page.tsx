@@ -10,11 +10,17 @@ import Topper from "@/components/students/Topper";
 import Teachers from "@/components/about/Teachers";
 import TestimonialSlider from "@/components/about/TestimonialSlider";
 import TopBlogs from "@/components/about/TopBlogs";
-import Footer from "@/components/about/Footer";
+// import Footer from "@/components/about/Footer";
 import { ToastContainer } from "react-toast";
 import CourseContextProvide from "@/context/courseContext";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <CourseContextProvide>
@@ -29,7 +35,7 @@ export default function Home() {
         <Teachers />
         <TestimonialSlider />
         <TopBlogs />
-        <Footer />
+        {/* <Footer /> */}
         <ToastContainer />
       </CourseContextProvide>
     </div>
