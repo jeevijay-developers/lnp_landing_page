@@ -86,6 +86,7 @@ const ModernForm = () => {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
+      id="form"
       className="max-w-xl mx-auto p-8 bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl space-y-6"
     >
       <h2 className="text-3xl font-bold text-center text-indigo-600 dark:text-indigo-400">

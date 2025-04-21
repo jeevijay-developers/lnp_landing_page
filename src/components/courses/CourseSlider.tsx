@@ -25,6 +25,7 @@ const CourseSlider = () => {
           {courses.map((course, index) => (
             <motion.div
               key={index}
+              id={`${course.title} ${course.class}`}
               className="embla__slide min-w-[300px] flex-shrink-0 bg-white dark:bg-zinc-900 rounded-2xl shadow-xl p-4"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -55,6 +56,7 @@ const CourseSlider = () => {
                 <div
                   onClick={() => {
                     context.setCourseData(`${course.title} ${course.class}`);
+                    location.hash = `#form`;
                   }}
                 >
                   <MyButtonOne text="Enroll Now" />
