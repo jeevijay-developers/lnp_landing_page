@@ -1,10 +1,23 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import MyButtonThree from "../buttons/MyButtonThree";
-import { toast } from "react-toast";
+import {
+  Box,
+  TextField,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+  Button,
+  Typography,
+  CircularProgress,
+  Paper,
+  Alert,
+} from "@mui/material";
+// import { toast } from "react-toastify";
 import { submitCourseRequest } from "@/server/api";
 import { CourseContext } from "@/context/courseContext";
+import { toast } from "react-toast";
 
 const availableCourses = [
   { name: "Navigator 9th", price: 7499 },
@@ -27,14 +40,13 @@ const ModernForm = () => {
   const [coupon, setCoupon] = useState("LNP10");
   const [discount, setDiscount] = useState(0);
   const [appliedCoupon, setAppliedCoupon] = useState("");
-  const [loading, setLaoding] = useState(false);
+  const [loading, setLoading] = useState(false);
   const context = useContext(CourseContext);
 
   useEffect(() => {
     if (context.title) {
-      const title = context.title;
-      const selectedCourse = availableCourses.filter((c) => c.name === title);
-      setCourse(selectedCourse[0]);
+      const selected = availableCourses.find((c) => c.name === context.title);
+      if (selected) setCourse(selected);
     }
   }, [context]);
 
@@ -46,15 +58,16 @@ const ModernForm = () => {
     } else {
       setDiscount(0);
       setAppliedCoupon("");
-      alert("Invalid coupon code!");
+      toast.error("Invalid coupon code!");
     }
   };
 
   const handleCheckout = () => {
-    setLaoding(true);
     if (!(name && mobile)) {
       toast.error("Please fill all the details");
+      return;
     }
+    setLoading(true);
     const checkout = {
       name,
       mobile,
@@ -64,19 +77,14 @@ const ModernForm = () => {
       totalAmount,
       coupon,
     };
-    // console.log(checkout);
+
     submitCourseRequest(checkout)
-      .then(() => {
-        toast.success("Your Request has been submitted successfully");
-      })
+      .then(() => toast.success("Request submitted successfully"))
       .catch((err) => {
         console.log(err);
-
-        toast.error("Your Request has not been submitted successfully");
+        toast.error("Failed to submit request");
       })
-      .finally(() => {
-        setLaoding(false);
-      });
+      .finally(() => setLoading(false));
   };
 
   const totalAmount = course.price - discount;
@@ -87,103 +95,113 @@ const ModernForm = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       id="form"
-      className="max-w-xl mx-auto p-8 bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl space-y-6"
+      className="my-10"
     >
-      <h2 className="text-3xl font-bold text-center text-indigo-600 dark:text-indigo-400">
-        Course Enrollment Form
-      </h2>
+      <Paper
+        elevation={4}
+        sx={{ maxWidth: 600, mx: "auto", p: 4, borderRadius: 3 }}
+      >
+        <Typography variant="h4" textAlign="center" mb={3} color="primary">
+          Course Enrollment Form
+        </Typography>
 
-      <div className="space-y-5">
-        <input
-          type="text"
-          placeholder="Full Name"
-          className="w-full p-3 rounded-xl border dark:bg-zinc-800 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <Box display="flex" flexDirection="column" gap={3}>
+          <TextField
+            fullWidth
+            label="Full Name"
+            variant="outlined"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <TextField
+            fullWidth
+            label="Mobile Number"
+            variant="outlined"
+            value={mobile}
+            onChange={(e) => setMobile(e.target.value)}
+          />
 
-        <input
-          type="tel"
-          placeholder="Mobile Number"
-          className="w-full p-3 rounded-xl border dark:bg-zinc-800 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          value={mobile}
-          onChange={(e) => setMobile(e.target.value)}
-        />
+          <FormControl fullWidth>
+            <InputLabel>Select Course</InputLabel>
+            <Select
+              value={course.name}
+              label="Select Course"
+              onChange={(e) => {
+                const selected = availableCourses.find(
+                  (c) => c.name === e.target.value
+                );
+                if (selected) setCourse(selected);
+              }}
+            >
+              {availableCourses.map((c) => (
+                <MenuItem key={c.name} value={c.name}>
+                  {c.name} - ₹{c.price}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
 
-        <div>
-          <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 block">
-            Select Course
-          </label>
-          <select
-            className="w-full p-3 rounded-xl border dark:bg-zinc-800 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            value={course.name}
-            onChange={(e) => {
-              const selected = availableCourses.find(
-                (c) => c.name === e.target.value
-              );
-              if (selected) setCourse(selected);
+          <TextField
+            fullWidth
+            label="Your Query"
+            variant="outlined"
+            multiline
+            rows={3}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+
+          <Box display="flex" gap={2}>
+            <TextField
+              fullWidth
+              label="Coupon Code"
+              variant="outlined"
+              value={coupon}
+              onChange={(e) => setCoupon(e.target.value)}
+            />
+            <Button variant="contained" onClick={handleApplyCoupon}>
+              Apply
+            </Button>
+          </Box>
+          <div className="text-green-500 text-[10px]">
+            get uptp 500 off with LNP10 coupon 🎉✨✨
+          </div>
+          {appliedCoupon && (
+            <Alert severity="success">
+              Coupon <strong>{appliedCoupon}</strong> applied! 🎉
+            </Alert>
+          )}
+
+          <Paper
+            elevation={1}
+            className="flex lg:flex-row flex-col justify-between items-center"
+            sx={{
+              p: 2,
+              backgroundColor: "indigo.100",
+
+              borderRadius: 2,
+              mt: 1,
             }}
           >
-            {availableCourses.map((c) => (
-              <option key={c.name} value={c.name}>
-                {c.name} - ₹{c.price}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <textarea
-          placeholder="Your Query"
-          className="w-full p-3 rounded-xl border h-24 resize-none dark:bg-zinc-800 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-
-        <div className="flex gap-2">
-          <input
-            type="text"
-            placeholder="Coupon Code"
-            className="flex-1 p-3 rounded-xl border dark:bg-zinc-800 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            value={coupon}
-            onChange={(e) => setCoupon(e.target.value)}
-          />
-          <button
-            onClick={handleApplyCoupon}
-            className="px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-semibold transition-all duration-300"
-          >
-            Apply
-          </button>
-        </div>
-
-        {appliedCoupon && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-green-600 dark:text-green-400 text-sm font-medium"
-          >
-            Coupon <strong>{appliedCoupon}</strong> applied! 🎉
-          </motion.div>
-        )}
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="p-4 bg-indigo-100 dark:bg-indigo-900/40 w-full rounded-xl w-fit flex items-center justify-between text-lg font-semibold"
-        >
-          <div>
-            <span>Total Amount </span> <span>₹{totalAmount}</span>
-          </div>
-          {loading ? (
-            <div onClick={handleCheckout}>
-              <MyButtonThree text={" Submitting"} />
-            </div>
-          ) : (
-            <div onClick={handleCheckout}>
-              <MyButtonThree text={" Proceed to Enquiry"} />
-            </div>
-          )}
-        </motion.div>
-      </div>
+            <Typography variant="subtitle1">
+              Total Amount: <strong>₹{totalAmount}</strong>
+            </Typography>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleCheckout}
+              disabled={loading}
+              sx={{ minWidth: 180 }}
+            >
+              {loading ? (
+                <CircularProgress size={24} color="inherit" />
+              ) : (
+                "Proceed to Enquiry"
+              )}
+            </Button>
+          </Paper>
+        </Box>
+      </Paper>
     </motion.div>
   );
 };

@@ -23,7 +23,7 @@ const Topper = () => {
             Online Learning
           </span>
         </h2>
-        <div className="flex flex-row gap-4 py-5 text-center items-center justify-center text-lg bg-white dark:bg-gray-800 dark:text-white rounded-xl shadow pb-4">
+        <div className="flex flex-row gap-4 py-5 text-center items-center justify-center text-lg bg-white dark:bg-gray-800 dark:text-white rounded-xl shadow pb-4 px-3">
           <p>
             Discover a world of knowledge and opportunities with <br /> our
             online education platform pursue a new career.

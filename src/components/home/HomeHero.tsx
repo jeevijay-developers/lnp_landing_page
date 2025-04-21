@@ -25,7 +25,7 @@ const HomeHero = () => {
           width={1400}
         />
       </div> */}
-      <div className="max-full relative  h-[600px] my-15 min-h-fit flex flex-col justify-start lg:justify-center items-center lg:flex-row  mx-auto">
+      <div className="max-full relative  my-15 min-h-fit flex flex-col justify-start lg:justify-center items-center lg:flex-row  mx-auto">
         <div className="relative lg:flex hidden h-[auto] lg:min-h-[auto] min-h-[500px] lg:w-[50%] w-full">
           <Image
             src={study}

@@ -34,7 +34,10 @@ const CourseSlider = () => {
               <img
                 src={course.image}
                 alt={course.title}
-                className="rounded-xl h-[300px] w-full object-cover mb-4"
+                style={{
+                  aspectRatio: "1/1",
+                }}
+                className="rounded-xl h-[300px] w-[370px] object-cover mb-4"
               />
               <div className="w-fit">
                 <h3 className="text-xl font-semibold text-indigo-600 mb-2 text-animated-underline">
