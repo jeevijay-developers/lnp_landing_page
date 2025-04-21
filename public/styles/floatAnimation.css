@@ -1,0 +1,81 @@
+.myfloat_first {
+  position: relative;
+  animation: float_first 3s infinite ease-in-out alternate;
+}
+
+.myfloat_second {
+  position: relative;
+  animation: float_second 3s infinite ease-in-out alternate;
+}
+
+.text-animated-underline {
+  position: relative;
+}
+.text-animated-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: var(--color-myGreen);
+  /* transition: width 0.3s ease-in-out; */
+  /* transition: all 0.3s ease-in-out;
+   */
+
+  animation-name: lineAnimation;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes lineAnimation {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.text-animated-underline:hover::after {
+  width: 100%;
+}
+@keyframes float_first {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(10px, 0px);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  75% {
+    transform: translate(0px, -10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes float_second {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(0px, 10px);
+  }
+  50% {
+    transform: translate(-10px, 10px);
+  }
+  75% {
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}

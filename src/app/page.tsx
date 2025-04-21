@@ -1,0 +1,37 @@
+"use client";
+import HomeAbout1 from "@/components/about/HomeAbout1";
+import WhyChooseUs from "@/components/about/WhyChooseUs";
+import CourseCategory from "@/components/courses/CourseCategory";
+import CourseSlider from "@/components/courses/CourseSlider";
+import HomeHero from "@/components/home/HomeHero";
+import HomeNavbar from "@/components/home/HomeNavbar";
+import Rankers from "@/components/students/Rankers";
+import Topper from "@/components/students/Topper";
+import Teachers from "@/components/about/Teachers";
+import TestimonialSlider from "@/components/about/TestimonialSlider";
+import TopBlogs from "@/components/about/TopBlogs";
+import Footer from "@/components/about/Footer";
+import { ToastContainer } from "react-toast";
+import CourseContextProvide from "@/context/courseContext";
+
+export default function Home() {
+  return (
+    <div>
+      <CourseContextProvide>
+        <HomeNavbar />
+        <CourseSlider />
+        <HomeHero />
+        <Topper />
+        <Rankers />
+        <HomeAbout1 />
+        <CourseCategory />
+        <WhyChooseUs />
+        <Teachers />
+        <TestimonialSlider />
+        <TopBlogs />
+        <Footer />
+        <ToastContainer />
+      </CourseContextProvide>
+    </div>
+  );
+}
