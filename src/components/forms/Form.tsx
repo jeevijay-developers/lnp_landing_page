@@ -15,33 +15,35 @@ import {
   Alert,
 } from "@mui/material";
 // import { toast } from "react-toastify";
-import { submitCourseRequest } from "@/server/api";
+import { submitCourseRequest, verifyCoupon } from "@/server/api";
 import { CourseContext } from "@/context/courseContext";
 import { toast } from "react-toast";
+import LoaderOne from "../spinners/LoaderOne";
 
 const availableCourses = [
-  { name: "Navigator 9th", price: 7499 },
-  { name: "Navigator 10th", price: 7499 },
+  // { name: "Navigator 9th", price: 7499 },
+  // { name: "Navigator 10th", price: 7499 },
   { name: "Nirmaan Batch IIT-JEE 11th", price: 8999 },
   { name: "Nirmaan Batch NEET 11th", price: 8999 },
   { name: "Nischay  Batch NEET 12th", price: 8999 },
   { name: "Nischay Batch IIT- JEE 12th", price: 8999 },
 ];
 
-const validCoupons: Record<string, number> = {
-  LNP10: 0.2,
-};
+// const validCoupons: Record<string, number> = {
+//   LNP10: 0.2,
+// };
 
 const ModernForm = () => {
   const [name, setName] = useState("");
   const [mobile, setMobile] = useState("");
   const [course, setCourse] = useState(availableCourses[0]);
   const [query, setQuery] = useState("");
-  const [coupon, setCoupon] = useState("LNP10");
+  const [coupon, setCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
   const [appliedCoupon, setAppliedCoupon] = useState("");
   const [loading, setLoading] = useState(false);
   const context = useContext(CourseContext);
+  const [applyingCoupons, setApplyingCoupons] = useState(false);
 
   useEffect(() => {
     if (context.title) {
@@ -51,15 +53,22 @@ const ModernForm = () => {
   }, [context]);
 
   const handleApplyCoupon = () => {
-    const code = coupon.trim().toUpperCase();
-    if (validCoupons[code]) {
-      setDiscount(500);
-      setAppliedCoupon(code);
-    } else {
-      setDiscount(0);
-      setAppliedCoupon("");
-      toast.error("Invalid coupon code!");
-    }
+    setApplyingCoupons(true);
+    verifyCoupon(coupon)
+      .then((res) => {
+        console.log(res);
+
+        setAppliedCoupon(coupon);
+        setDiscount(res.coupon.value);
+      })
+      .catch((err) => {
+        console.log(err);
+
+        toast.warn("Sorry Coupon not found 😓😓😓");
+      })
+      .finally(() => {
+        setApplyingCoupons(false);
+      });
   };
 
   const handleCheckout = () => {
@@ -159,13 +168,17 @@ const ModernForm = () => {
               value={coupon}
               onChange={(e) => setCoupon(e.target.value)}
             />
-            <Button variant="contained" onClick={handleApplyCoupon}>
-              Apply
-            </Button>
+            {applyingCoupons ? (
+              <LoaderOne />
+            ) : (
+              <Button variant="contained" onClick={handleApplyCoupon}>
+                Apply
+              </Button>
+            )}
           </Box>
-          <div className="text-green-500 text-[10px]">
+          {/* <div className="text-green-500 text-[10px]">
             get upto 500 off with LNP10 coupon 🎉✨✨
-          </div>
+          </div> */}
           {appliedCoupon && (
             <Alert severity="success">
               Coupon <strong>{appliedCoupon}</strong> applied! 🎉

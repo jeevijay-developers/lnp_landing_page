@@ -7,37 +7,37 @@ type Course = {
 };
 
 const courses: Course[] = [
-  {
-    title: "Navigator",
-    class: "9th",
-    image: "/imgs/c1.jpeg",
-    description: `
-    <ul >
-        <li>Live Interactive Classes</li>
-        <li> Recorded Video Lectures</li>
-        <li>Weekly Practice Sheet (WPS)</li>
-        <li>Doubt Sessions</li>
-        <li>Personal Mentorship</li>
-        <li>Regular Parents and Teacher Meeting (PTM)</li>
-      </ul>`,
-    price: 7499,
-  },
-  {
-    title: "Navigator",
-    class: "10th",
-    image: "/imgs/c2.jpeg",
-    description: `
-    <ol type="1">
-        <li>Live Interactive Classes</li>
-        <li> Recorded Video Lectures</li>
-  <li>Weekly Practice Sheet (WPS)</li>
-  <li>Doubt Sessions</li>
-  <li>Personal Mentorship</li>
-  <li>Regular Parents and Teacher Meeting (PTM)</li>
-      </ol>
-      `,
-    price: 7499,
-  },
+  // {
+  //   title: "Navigator",
+  //   class: "9th",
+  //   image: "/imgs/c1.jpeg",
+  //   description: `
+  //   <ul >
+  //       <li>Live Interactive Classes</li>
+  //       <li> Recorded Video Lectures</li>
+  //       <li>Weekly Practice Sheet (WPS)</li>
+  //       <li>Doubt Sessions</li>
+  //       <li>Personal Mentorship</li>
+  //       <li>Regular Parents and Teacher Meeting (PTM)</li>
+  //     </ul>`,
+  //   price: 7499,
+  // },
+  // {
+  //   title: "Navigator",
+  //   class: "10th",
+  //   image: "/imgs/c2.jpeg",
+  //   description: `
+  //   <ol type="1">
+  //       <li>Live Interactive Classes</li>
+  //       <li> Recorded Video Lectures</li>
+  // <li>Weekly Practice Sheet (WPS)</li>
+  // <li>Doubt Sessions</li>
+  // <li>Personal Mentorship</li>
+  // <li>Regular Parents and Teacher Meeting (PTM)</li>
+  //     </ol>
+  //     `,
+  //   price: 7499,
+  // },
   {
     title: "Nirmaan Batch IIT-JEE",
     class: "11th",
