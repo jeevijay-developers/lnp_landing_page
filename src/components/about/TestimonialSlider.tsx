@@ -24,7 +24,8 @@ const testimonials: Testimonial[] = [
   },
   {
     name: "Sneha Verma",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2024/02/12/17/23/ai-generated-8569065_1280.jpg",
     message:
       " Learn N Prep exceeded my expectations. The personalized attention and customized study plans were exactly what I needed. The teachers are very approachable and provide valuable feedback. I would definitely recommend this coaching institute to others",
     rating: 4,
@@ -33,35 +34,36 @@ const testimonials: Testimonial[] = [
   {
     name: "Rohit Mehta",
     image:
-      "https://t3.ftcdn.net/jpg/10/66/68/96/360_F_1066689635_FMCMRi9EVzawgC9ZItv8Lba0HYeTi9GV.jpg",
+      "https://cdn.pixabay.com/photo/2018/08/18/16/23/indian-man-3615047_1280.jpg",
     message:
       "Learn N Prep is a fantastic place to prepare for exams. The detailed study guides and regular assessments kept me on track. The teachers are genuinely invested in student success, and the overall atmosphere is very motivating.",
     rating: 5,
     role: "",
   },
   {
-    name: "Aarav Sharma",
+    name: "Aditya Bhanushali",
     image:
-      "https://t3.ftcdn.net/jpg/10/66/68/96/360_F_1066689635_FMCMRi9EVzawgC9ZItv8Lba0HYeTi9GV.jpg",
+      "https://cdn.pixabay.com/photo/2017/11/28/04/57/indian-boy-2982850_1280.jpg",
     message:
-      "Excellent faculty and a good learning environment. Up-to-date resources. More online resources for remote studying would be great.",
+      "The faculty is outstanding, and the learning atmosphere is truly encouraging. The course materials are current and well-structured. Adding more online resources would make it even more convenient for students who prefer remote learning.",
     rating: 5,
     role: "",
   },
   {
-    name: "Sneha Verma",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Gargi Jain",
+    image:
+      "https://cdn.pixabay.com/photo/2021/02/03/09/44/portrait-5977311_960_720.jpg",
     message:
-      " Learn N Prep exceeded my expectations. The personalized attention and customized study plans were exactly what I needed. The teachers are very approachable and provide valuable feedback. I would definitely recommend this coaching institute to others",
+      "Learn N Prep truly surpassed my expectations! The individualized support and tailored study plans helped me stay focused and motivated. The faculty is friendly and always ready to guide with insightful feedback. I’d highly recommend this institute to anyone aiming for academic success.",
     rating: 4,
     role: "",
   },
   {
-    name: "Rohit Mehta",
+    name: "Rohit Raj Gupta",
     image:
-      "https://t3.ftcdn.net/jpg/10/66/68/96/360_F_1066689635_FMCMRi9EVzawgC9ZItv8Lba0HYeTi9GV.jpg",
+      "https://cdn.pixabay.com/photo/2021/03/05/00/32/man-6069944_960_720.jpg",
     message:
-      "Learn N Prep is a fantastic place to prepare for exams. The detailed study guides and regular assessments kept me on track. The teachers are genuinely invested in student success, and the overall atmosphere is very motivating.",
+      "Learn N Prep offers an excellent environment for exam preparation. Their structured study materials and frequent assessments helped me stay disciplined and focused. The faculty is truly dedicated to each student’s progress, and the motivating atmosphere made learning enjoyable.",
     rating: 5,
     role: "",
   },
