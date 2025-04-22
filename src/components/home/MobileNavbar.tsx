@@ -5,6 +5,7 @@ import navbar from "@/data/navbar";
 import { FaChevronDown } from "react-icons/fa";
 import Image from "next/image";
 import icon from "../../../public/icons/logo.png";
+import MyButtonFour from "../buttons/MyButtonFour";
 
 // import { RxHamburgerMenu } from "react-icons/rx";
 
@@ -25,9 +26,16 @@ const MobileNavbar: React.FC<Props> = ({ hideSidebar }) => {
     } transition-all duration-300 ease-in-out
     `}
     >
-      <ul className="mb-10">
+      <ul className="mb-10 flex flex-row justify-between items-center">
         <li>
-          <Image src={icon} alt="icon" className="w-auto h-auto" />
+          <Image
+            src={icon}
+            alt="icon"
+            className="lg:w-auto lg:h-auto w-[50%] h-auto "
+          />
+        </li>
+        <li>
+          <MyButtonFour />
         </li>
       </ul>
       <ul className="flex flex-col  w-full justify-start relative items-start gap-4">
