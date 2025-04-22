@@ -8,7 +8,7 @@ const MyButtonFour = () => {
       <a
         href="https://learnnprep.com/login"
         target="_blank"
-        className="login-button"
+        className="login-button text-black"
       >
         <div className="outline"></div>
         <div className="state state--default">
