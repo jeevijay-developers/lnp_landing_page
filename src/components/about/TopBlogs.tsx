@@ -16,14 +16,14 @@ const blogs: Blog[] = [
     image: "/imgs/b1.png",
     summary: "JEE Advanced 2025: The Ultimate Guide to Crack the IIT Dream",
     date: "2025-02-25 17:13:44",
-    link: "#",
+    link: "https://learnnprep.com/blog/JEE%20Advanced%202025:%20The%20Ultimate%20Guide%20to%20Crack%20the%20IIT%20Dream",
   },
   {
     title: "",
     image: "/imgs/b2.png",
     summary: "JEE Main 2025 (Session 2): Your Last Chance to Shine!",
     date: "April 5, 2025",
-    link: "#",
+    link: "https://learnnprep.com/blog/JEE%20Main%202025%20(Session%202):%20Your%20Last%20Chance%20to%20Shine!",
   },
   {
     title: "Top UI/UX Trends in 2025",
@@ -31,7 +31,7 @@ const blogs: Blog[] = [
     summary:
       "Outstanding Results by Learn N Prep Students in JEE Main 2025 (Session 1)",
     date: "2025-02-25 16:49:47",
-    link: "#",
+    link: "https://learnnprep.com/blog/Outstanding%20Results%20by%20Learn%20N%20Prep%20Students%20in%20JEE%20Main%202025%20(Session%201)",
   },
 ];
 

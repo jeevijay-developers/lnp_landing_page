@@ -52,7 +52,7 @@ const courses: Course[] = [
   <li>Regular Parents and Teacher Meeting (PTM)</li>
       </ol>
       `,
-    price: 8999,
+    price: 7999,
   },
   {
     title: "Nirmaan Batch NEET",
@@ -68,10 +68,10 @@ const courses: Course[] = [
   <li>Regular Parents and Teacher Meeting (PTM)</li>
       </ol>
       `,
-    price: 8999,
+    price: 7999,
   },
   {
-    title: "Nischay  Batch NEET",
+    title: "Nischay Batch IIT- JEE",
     class: "12th",
     image: "/imgs/c5.jpeg",
     description: `
@@ -87,7 +87,7 @@ const courses: Course[] = [
     price: 8999,
   },
   {
-    title: "Nischay Batch IIT- JEE",
+    title: "Nischay  Batch NEET",
     class: "12th",
     image: "/imgs/c6.jpeg",
     description: `

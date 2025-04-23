@@ -3,7 +3,7 @@ import { BounceLoader } from "react-spinners";
 
 const LoaderOne = () => {
   return (
-    <div>
+    <div className="flex justify-center items-center">
       <BounceLoader
         color="#0085ff"
         cssOverride={{}}

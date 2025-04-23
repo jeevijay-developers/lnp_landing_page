@@ -23,8 +23,8 @@ import LoaderOne from "../spinners/LoaderOne";
 const availableCourses = [
   // { name: "Navigator 9th", price: 7499 },
   // { name: "Navigator 10th", price: 7499 },
-  { name: "Nirmaan Batch IIT-JEE 11th", price: 8999 },
-  { name: "Nirmaan Batch NEET 11th", price: 8999 },
+  { name: "Nirmaan Batch IIT-JEE 11th", price: 7999 },
+  { name: "Nirmaan Batch NEET 11th", price: 7999 },
   { name: "Nischay  Batch NEET 12th", price: 8999 },
   { name: "Nischay Batch IIT- JEE 12th", price: 8999 },
 ];
