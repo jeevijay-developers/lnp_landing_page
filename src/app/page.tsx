@@ -16,6 +16,7 @@ import CourseContextProvide from "@/context/courseContext";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ImageSection from "@/components/about/ImageSection ";
 
 export default function Home() {
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function Home() {
         <CourseSlider />
         <HomeHero />
         <Topper />
+        <ImageSection />
         <Rankers />
         <HomeAbout1 />
         <CourseCategory />
