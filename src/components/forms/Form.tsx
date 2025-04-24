@@ -23,10 +23,10 @@ import LoaderOne from "../spinners/LoaderOne";
 const availableCourses = [
   // { name: "Navigator 9th", price: 7499 },
   // { name: "Navigator 10th", price: 7499 },
-  { name: "Nirmaan Batch IIT-JEE 11th", price: 7999 },
-  { name: "Nirmaan Batch NEET 11th", price: 7999 },
-  { name: "Nischay  Batch NEET 12th", price: 8999 },
-  { name: "Nischay Batch IIT- JEE 12th", price: 8999 },
+  { name: "Nirmaan Batch IIT-JEE 11th", price: 6999 },
+  { name: "Nirmaan Batch NEET 11th", price: 6999 },
+  { name: "Nischay  Batch NEET 12th", price: 6999 },
+  { name: "Nischay Batch IIT- JEE 12th", price: 6999 },
 ];
 
 // const validCoupons: Record<string, number> = {
@@ -38,7 +38,7 @@ const ModernForm = () => {
   const [mobile, setMobile] = useState("");
   const [course, setCourse] = useState(availableCourses[0]);
   const [query, setQuery] = useState("");
-  const [coupon, setCoupon] = useState("");
+  const [coupon, setCoupon] = useState("SRAM");
   const [discount, setDiscount] = useState(0);
   const [appliedCoupon, setAppliedCoupon] = useState("");
   const [loading, setLoading] = useState(false);
@@ -176,9 +176,13 @@ const ModernForm = () => {
               </Button>
             )}
           </Box>
-          {/* <div className="text-green-500 text-[10px]">
-            get upto 500 off with LNP10 coupon 🎉✨✨
-          </div> */}
+          <div className="text-green-500 text-[15px]">
+            🎉 Get up to ₹500 OFF!
+            <p className="text-[10px]">
+              Apply the coupon by entering the last few digits to unlock your
+              discount! ✨💸
+            </p>
+          </div>
           {appliedCoupon && (
             <Alert severity="success">
               Coupon <strong>{appliedCoupon}</strong> applied! 🎉
