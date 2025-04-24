@@ -71,6 +71,15 @@ const ModernForm = () => {
       });
   };
 
+  const handleCouponChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.target.value;
+
+    // Ensure it always starts with "SRAM"
+    if (!input.startsWith("SRAM")) return;
+
+    setCoupon(input);
+  };
+
   const handleCheckout = () => {
     if (!(name && mobile)) {
       toast.error("Please fill all the details");
@@ -166,7 +175,7 @@ const ModernForm = () => {
               label="Coupon Code"
               variant="outlined"
               value={coupon}
-              onChange={(e) => setCoupon(e.target.value)}
+              onChange={handleCouponChange}
             />
             {applyingCoupons ? (
               <LoaderOne />
