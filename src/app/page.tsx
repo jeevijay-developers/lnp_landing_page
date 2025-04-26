@@ -17,6 +17,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ImageSection from "@/components/about/ImageSection ";
+import DownloadApp from "@/components/about/DownloadApp";
 
 export default function Home() {
   useEffect(() => {
@@ -32,6 +33,7 @@ export default function Home() {
         <ImageSection />
         <Rankers />
         <HomeAbout1 />
+        <DownloadApp />
         <CourseCategory />
         <WhyChooseUs />
         <Teachers />
